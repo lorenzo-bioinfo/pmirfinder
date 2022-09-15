@@ -1,0 +1,1 @@
+http://ftp.ensemblgenomes.org/pub/plants/release-54/gtf/glycine_max/Glycine_max.Glycine_max_v2.1.54.chr.gtf.gz

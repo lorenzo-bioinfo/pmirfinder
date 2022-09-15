@@ -1,0 +1,9 @@
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.1.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.2.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.3.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.4.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.5.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.6.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.7.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.8.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/daucus_carota/dna/Daucus_carota.ASM162521v1.dna.chromosome.9.fa.gz

@@ -1,0 +1,10 @@
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A01.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A02.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A03.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A04.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A05.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A06.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A07.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A08.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A09.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/brassica_rapa/dna/Brassica_rapa.Brapa_1.0.dna.chromosome.A10.fa.gz

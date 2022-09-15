@@ -1,0 +1,1 @@
+http://ftp.ensemblgenomes.org/pub/plants/release-54/gtf/solanum_lycopersicum/Solanum_lycopersicum.SL3.0.54.chr.gtf.gz

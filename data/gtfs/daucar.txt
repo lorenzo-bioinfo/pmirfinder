@@ -1,0 +1,1 @@
+http://ftp.ensemblgenomes.org/pub/plants/release-54/gtf/daucus_carota/Daucus_carota.ASM162521v1.54.chr.gtf.gz

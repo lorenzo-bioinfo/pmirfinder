@@ -1,0 +1,12 @@
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.1.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.2.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.3.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.4.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.5.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.6.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.7.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.8.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.9.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.10.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.11.fa.gz
+http://ftp.ensemblgenomes.org/pub/plants/release-54/fasta/solanum_lycopersicum/dna/Solanum_lycopersicum.SL3.0.dna.chromosome.12.fa.gz
