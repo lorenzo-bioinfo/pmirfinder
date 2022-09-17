@@ -1,0 +1,10 @@
+ath,Thale Cress
+bevul,Beet
+brapa,Turnip
+daucar,Carrot
+gmax,Soy
+osat,Rice
+phavul,Bean
+soltub,Potato
+solyc,Tomato
+vitvin,Grape

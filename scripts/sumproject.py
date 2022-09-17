@@ -15,7 +15,7 @@ with open(os.path.join(basedir, f'data/projects/{proj}.txt')) as f:
 
 plant_counts = {}
 for srrid in srr_ids:
-	df = pd.read_csv(os.path.join(basedir, f'/mnt/data0/lorenzo/{proj}/{proj}.pmirs/{srrid}.{plant}.tsv'), header = 0, sep = '\t')
+	df = pd.read_csv(os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.tsv'), header = 0, sep = '\t')
 	full = True
 	try:
 		seqs = list(df['Seq'])

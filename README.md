@@ -4,7 +4,7 @@ This is a tool I developed to identify plant-derived micro-RNAs in human smallRN
 ### Usage
 To run the tool with default settings and data options, just clone the repository and run */pmirfinder.sh* on your machine.
 
-Please note that the tool is intended to be ran on a GNU/Linux system (preferably Debian-based) and uses several bioinformatics tools and python3 libraries (Software requirements are listed below). The installation of the required packages and libraries is left to the user.
+Please note that the tool is intended to be ran on a GNU/Linux system (preferably Debian-based) and uses several bioinformatics tools and Python3 libraries (Software requirements are listed below). The installation of the required packages and libraries is left to the user.
 
 Minimum hardware requirements to use this software with default data options are:
 
@@ -27,7 +27,7 @@ The steps of the analysis can be summarized as follow:
 5) Local BLAST search of the sequences identified as putative pmiRNAs against miRBase and Human RefSeq mRNA;
 6) Parsing of the obtained results and generation of statistics and graphs.
 
-The tools used in this script are all FOSS, and all the code you find in this repository is distributed under the GNU-GPL v2. If you use any significant chunk of this code, please consider citing my work :)
+The tools used in this script are all FOSS, and all the code you find in this repository is distributed under the GNU-GPL v2. If you use any significant chunk of this code, please consider citing the authors of 3rd party tools and my work :)
 
 ### - <u>Software requirements</u>
 This is a list of the tools and libraries you need to have installed on your machine in order to run pmiRFinder. The installation of these packages is left to the user. The tools must also be in your PATH in order for the script to call them when needed.
@@ -60,11 +60,11 @@ The following instructions explain how to add smallRNA-sequencing data to be pro
 
 Default plant genomes used in the study are downloaded by Ensembl Plants FTP website: (https://plants.ensembl.org/info/data/ftp/index.html).
 
-After chosing a new plant genomes to add to the analysis, you should chose an alias for the species (e.g. *Arabidopsis thaliana* = ath).
+After chosing a new plant genome to add to the analysis, you should chose an alias for the species (e.g. *Arabidopsis thaliana* = ath).
 
 <u>**Important Note**</u>: the .gtf file must contain the attributes *miRNA* or *pre-miRNA* in the *gene_biotype* attribute. Not all Plant genomes have this kind of annotation, so please check it out befor adding one to the script.
 
-Create a file named <plant_alias>.txt containing the links to the chromosome fasta files, and put it in the folder */data/genomes/* (plenty of examples can be found in the folder).
+Create a file named <plant_alias>.txt containing the links to the chromosomes fasta files, and put it in the folder */data/genomes/* (plenty of examples can be found in the folder).
 
 Next, create another file named <plant_alias.txt> containing the link to the .gtf genome annotation file, also found on the Ensembl Plants FTP website. Put the file in the folder */data/gtfs/* (again, plenty of examples can be found in the folder).
 
@@ -76,11 +76,11 @@ To remove a plant genome from the process, just delete the two files indicated a
 
 #### <u>Adding SRA projects</u> (sequencing data)
 
-NCBI-SRA data used by default in this tool is organized in project identified by the prefix PRJNA-
+NCBI-SRA data used by default in this tool is organized in projects identified by the prefix PRJNA-
 
 To add sequencing data create a file named *PRJNA<project_number>.txt* and put it in the folder */data/projects* (plenty of examples can be found in the folder).
 
-After doing this, edit the cript *pmirfinder.sh* and add *PRJNA-<project_number>* to the array named PROJS, which can be found in the first few lines of code.
+After doing this, edit the script */pmirfinder.sh* and add *PRJNA<project_number>* to the array named PROJS, which can be found in the first few lines of code.
 
 Run the script and all should be fine
 

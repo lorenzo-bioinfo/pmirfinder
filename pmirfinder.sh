@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 PLANTS=('ath' 'bevul' 'brapa' 'daucar' 'gmax' 'osat' 'phavul' 'soltub' 'solyc' 'vitvin')
-PROJ=('PRJNA593788' 'PRJNA637898' 'PRJNA735638' 'PRJNA857648' 'PRJNA858789')
+PROJ=('PRJNA593788' 'PRJNA637898' 'PRJNA735638')
 BASEDIR=$(pwd)
 NUMTHREADS=$(grep -c ^processor /proc/cpuinfo)
 
@@ -165,3 +165,16 @@ mkdir $BASEDIR/results/
 mkdir $BASEDIR/results/individuals/
 python $BASEDIR/scripts/individuals_seqs.py $BASEDIR
 python $BASEDIR/scripts/individuals_count.py $BASEDIR
+echo 'Retrieving estimated size of plants genomes'
+touch $BASEDIR/data/genome_sizes.txt
+for plant in ${PLANTS[@]}
+do
+        echo "$(wc -c $BASEDIR/bt-index/$plant/$plant.fa)" >> $BASEDIR/data/genome_sizes.txt
+done
+mkdir $BASEDIR/graphs
+echo 'Reporting alignments data'
+python $BASEDIR/scripts/alignments_reporter.py $BASEDIR
+echo 'Plotting some graphs...'
+python $BASEDIR/scripts/alignments_barplot.py $BASEDIR
+python $BASEDIR/scripts/bitscore_kde.py $BASEDIR
+echo 'Done!'
