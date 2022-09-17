@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 PLANTS=('ath' 'bevul' 'brapa' 'daucar' 'gmax' 'osat' 'phavul' 'soltub' 'solyc' 'vitvin')
-PROJ=('PRJNA593788' 'PRJNA637898' 'PRJNA735638')
+PROJ=('PRJNA299307' 'PRJNA593788' 'PRJNA637898' 'PRJNA735638' 'PRJNA779718')
 BASEDIR=$(pwd)
 NUMTHREADS=$(grep -c ^processor /proc/cpuinfo)
 
