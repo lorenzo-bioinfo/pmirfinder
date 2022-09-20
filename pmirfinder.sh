@@ -5,29 +5,29 @@ PROJ=('PRJNA299307' 'PRJNA593788' 'PRJNA637898' 'PRJNA735638' 'PRJNA779718')
 BASEDIR=$(pwd)
 NUMTHREADS=$(grep -c ^processor /proc/cpuinfo)
 
-read -p "Do you wish to download and index reference genomes (This will take a lot of time)?[y/n]" download
-download=${download:-y}
-if [ $download == 'y' ]
-then
-	python $BASEDIR/scripts/genomes_downloader.py $BASEDIR
-	echo "Building indexes for human filter data"
-	mkdir $BASEDIR/bt-index/hmirbase
-	cp $BASEDIR/data/mirbase/hmirnas.fa $BASEDIR/bt-index/hmirbase/
-	echo "Building Human Genome index (This will take some time)..."
-	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hgenome/hgenome.fa $BASEDIR/bt-index/hgenome/hgenome
-	echo "Building Human cDNA index (This will take some time)..."
-	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hcdna/hcdna.fa $BASEDIR/bt-index/hcdna/hcdna
-	echo "Building Human non-chromosomal dna index..."
-	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hnonchr/hnonchr.fa $BASEDIR/bt-index/hnonchr/hnonchr
-	echo "Building Human miRBase index..."
-	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hmirbase/hmirnas.fa $BASEDIR/bt-index/hmirbase/hmirbase
-	echo "Building indexes for plants genomes"
-	for plant in ${PLANTS[@]}
-	do
-		echo "Building $plant genome index (likely to take some time)..."
-		bowtie-build --quiet --threads $NUMTHREADS -f "$BASEDIR/bt-index/$plant/$plant.fa" "$BASEDIR/bt-index/$plant/$plant"
-	done
-fi
+#read -p "Do you wish to download and index reference genomes (This will take a lot of time)?[y/n]" download
+#download=${download:-y}
+#if [ $download == 'y' ]
+#then
+#	python $BASEDIR/scripts/genomes_downloader.py $BASEDIR
+#	echo "Building indexes for human filter data"
+#	mkdir $BASEDIR/bt-index/hmirbase
+#	cp $BASEDIR/data/mirbase/hmirnas.fa $BASEDIR/bt-index/hmirbase/
+#	echo "Building Human Genome index (This will take some time)..."
+#	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hgenome/hgenome.fa $BASEDIR/bt-index/hgenome/hgenome
+#	echo "Building Human cDNA index (This will take some time)..."
+#	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hcdna/hcdna.fa $BASEDIR/bt-index/hcdna/hcdna
+#	echo "Building Human non-chromosomal dna index..."
+#	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hnonchr/hnonchr.fa $BASEDIR/bt-index/hnonchr/hnonchr
+#	echo "Building Human miRBase index..."
+#	bowtie-build --quiet --threads $NUMTHREADS -f $BASEDIR/bt-index/hmirbase/hmirnas.fa $BASEDIR/bt-index/hmirbase/hmirbase
+#	echo "Building indexes for plants genomes"
+#	for plant in ${PLANTS[@]}
+#	do
+#		echo "Building $plant genome index (likely to take some time)..."
+#		bowtie-build --quiet --threads $NUMTHREADS -f "$BASEDIR/bt-index/$plant/$plant.fa" "$BASEDIR/bt-index/$plant/$plant"
+#	done
+#fi
 #############################################################################################################
 for project in ${PROJ[@]}
 do

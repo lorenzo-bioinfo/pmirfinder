@@ -12,12 +12,14 @@ sequences = list(resultsdf['Sequence'])
 
 ind_seqs = {}
 for srrid in srrids:
-	s = []
-	with open(f'{basedir}/results/individuals/{srrid}.txt', 'r') as f:
-		for line in f:
-			s.append(line.strip())
-		ind_seqs[srrid] = set(s)
-
+	try:
+		s = []
+		with open(f'{basedir}/results/individuals/{srrid}.txt', 'r') as f:
+			for line in f:
+				s.append(line.strip())
+			ind_seqs[srrid] = set(s)
+	except FileNotFoundError:
+		pass
 counts = []
 for seq in sequences:
 	c = 0

@@ -49,7 +49,7 @@ print('Downloading human RefSeq mRNA data')
 os.mkdir(os.path.join(basedir, 'blast_db/'))
 os.mkdir(os.path.join(basedir, 'blast_db/hrefseq/'))
 os.chdir(os.path.join(basedir, 'blast_db/hrefseq'))
-for i in range(1, 7):
+for i in range(1, 8):
 	download(f'https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/mRNA_Prot/human.{i}.rna.fna.gz')
 print('\nDecompressing and merging data...')
 ziplist = os.listdir()

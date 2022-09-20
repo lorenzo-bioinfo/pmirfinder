@@ -41,6 +41,9 @@ with open(os.path.join(basedir, f'data/projects/{proj}.txt')) as f:
 		srr_ids.append(line.strip())
 
 for srrid in srr_ids:
-	fastafile = os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.fa')
-	df = fastaParse(fastafile, proj, plant, srrid, basedir)
-	df.to_csv(os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.tsv'), sep = '\t')
+	try:
+		fastafile = os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.fa')
+		df = fastaParse(fastafile, proj, plant, srrid, basedir)
+		df.to_csv(os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.tsv'), sep = '\t')
+	except FileNotFoundError:
+		print(f'{srrid} not found. Probably download went wrong in the first place...')

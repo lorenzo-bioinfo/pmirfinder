@@ -25,11 +25,14 @@ for proj in projects:
 			srrids.append(line.strip())
 	dirlist = os.listdir(f'{basedir}/{proj}/{proj}.pmirs/')
 	for srrid in srrids:
-		srr_seqs = []
-		srrfiles = [x for x in dirlist if (x.startswith(srrid) and x.endswith('.fa'))]
-		for file in srrfiles:
-			srr_seqs.extend(fastaparse(f'{basedir}/{proj}/{proj}.pmirs/{file}'))
-		with open(f'{basedir}/results/individuals/{srrid}.txt', 'w') as f:
-			srr_seqs = set(srr_seqs)
-			for seq in srr_seqs:
-				f.write(f'{seq}\n')
+		try:
+			srr_seqs = []
+			srrfiles = [x for x in dirlist if (x.startswith(srrid) and x.endswith('.fa'))]
+			for file in srrfiles:
+				srr_seqs.extend(fastaparse(f'{basedir}/{proj}/{proj}.pmirs/{file}'))
+			with open(f'{basedir}/results/individuals/{srrid}.txt', 'w') as f:
+				srr_seqs = set(srr_seqs)
+				for seq in srr_seqs:
+					f.write(f'{seq}\n')
+		except FileNotFoundError:
+			pass
