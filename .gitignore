@@ -1,2 +1,5 @@
 /blast_db
 /bt-index
+/PRJNA*
+/err.log
+/out.log
