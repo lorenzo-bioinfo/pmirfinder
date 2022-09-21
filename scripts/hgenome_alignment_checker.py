@@ -15,9 +15,9 @@ for file in files:
 hgenome_meanscore = sum(alignments) / len(alignments)
 
 if hgenome_meanscore >= 40:
-	print("Second alignment quality check passed: more than 40% (mean rate) of reads aligned to human genome")
+	print(f"Second alignment quality check passed: more than 40% (mean rate) of reads aligned to human genome ({hgenome_meanscore:.2f}%)")
 else:
 	print("#############################################################################################################\n")
-	print(f"########## WARNING: Average alignment rate for human genome was < 40%. Consider removing {proj} from analysis\n")
+	print(f"########## WARNING: Average alignment rate for human genome was < 40% ({hgenome_meanscore:.2f}%). Consider removing {proj} from analysis\n")
 	print("#############################################################################################################\n")
 
