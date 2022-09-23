@@ -3,3 +3,5 @@
 /PRJNA*
 /err.log
 /out.log
+/results
+/graphs
