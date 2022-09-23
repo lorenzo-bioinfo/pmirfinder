@@ -28,7 +28,7 @@ then
 		bowtie-build --quiet --threads $NUMTHREADS -f "$BASEDIR/bt-index/$plant/$plant.fa" "$BASEDIR/bt-index/$plant/$plant"
 	done
 fi
-#############################################################################################################
+############################################################################################################
 for project in ${PROJ[@]}
 do
 	mkdir $BASEDIR/$project
@@ -40,13 +40,13 @@ do
 		echo "Started downloading $line from $project"
 		fasterq-dump --threads $NUMTHREADS -O $BASEDIR/$project/$project.raw/  --skip-technical $line
 	done
-###########################################################################################################
+##########################################################################################################
 	echo "Startig quality check for raw reads of $project"
 	mkdir "$BASEDIR/$project/$project.rawQC"
 	fastqc -t $NUMTHREADS -o $BASEDIR/$project/$project.rawQC $BASEDIR/$project/$project.raw/*.fastq
 	echo "Summarizing raw QC results from $project"
 	multiqc $BASEDIR/$project/$project.rawQC -o $BASEDIR/$project/$project.rawQC
-############################################################################################################
+###########################################################################################################
 	echo "Starting trimming for raw reads of $project"
 	mkdir $BASEDIR/$project/$project.trimmed
 	cat $BASEDIR/data/projects/$project.txt | while read line
@@ -58,7 +58,7 @@ do
 	done
 	echo "Trimming completed for all files, removing raw reads folder"
 	rmdir $BASEDIR/$project/$project.raw
-################################################################################################################
+###############################################################################################################
 	echo "Startig quality check for trimmed reads of $project"
 	mkdir $BASEDIR/$project/$project.trimmedQC
 	fastqc -t $NUMTHREADS -o $BASEDIR/$project/$project.trimmedQC $BASEDIR/$project/$project.trimmed/*.fq
@@ -133,7 +133,7 @@ do
 			bowtie -x $BASEDIR/bt-index/$plant/$plant -n 0 -l 20 --norc --best --strata -m 1 -p 24 --un $BASEDIR/$project/$project.$plant/$line.unaligned.fastq -S $BASEDIR/$project/$project.non_human/$line.non_human.fastq > $BASEDIR/$project/$project.$plant/$line.$plant.sam 2>> $BASEDIR/$project/$project.$plant/$line.alignment_report.txt
 		done
 		echo "Extracting $plant miRNAs counts for $project"
-		python $BASEDIR/scripts/mircounter.py $plant $project $BASEDIR 2> /dev/null
+		python $BASEDIR/scripts/mircounter.py $plant $project $BASEDIR
 		echo "Summarizing results for $project"
 		python $BASEDIR/scripts/fastparser.py $plant $project $BASEDIR
 		echo "Collecting and summarizing results for $plant in $project"
@@ -177,4 +177,5 @@ python $BASEDIR/scripts/alignments_reporter.py $BASEDIR
 echo 'Plotting some graphs...'
 python $BASEDIR/scripts/alignments_barplot.py $BASEDIR
 python $BASEDIR/scripts/bitscore_kde.py $BASEDIR
+rm $BASEDIR/data/allids.txt
 echo 'Done!'

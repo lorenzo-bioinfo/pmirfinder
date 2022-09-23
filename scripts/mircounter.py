@@ -42,7 +42,7 @@ for srrid in srr_ids:
 			annots.append([int(row['start'].values[0]), int(row['end'].values[0]), row['gene_id'].values[0]])
 			genes[str(row['gene_id'].values[0])] = [0, [], row['gene_biotype'].values[0]]
 		#checking sam file for reads that align to mirs coordinates
-		with open(os.path.join(basedir, f'{proj}/{proj}.{plant}/{srrid}.{plant}.sam'), 'r') as f:
+		with open(f'{basedir}/{proj}/{proj}.{plant}/{srrid}.{plant}.sam', 'r') as f:
 			for line in f:
 				if line.startswith('SRR'):
 					features = line.strip().split('\t')

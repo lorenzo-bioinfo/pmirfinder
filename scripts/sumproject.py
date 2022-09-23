@@ -34,8 +34,7 @@ for srrid in srr_ids:
 					counts = df[df['Seq'] == seq]['Count'].values[0]
 					plant_counts[seq] = [counts, normcounts]
 	except FileNotFoundError:
-		print(f'{srrid} not found. Proably download went wrong in the first place...')
-		downloaded = downloaded - 1
+		print(f'{srrid} not found for {plant}. Either download failed to begin with, or no pmiRNAs were found')
 clean_dict = {}
 for i, key in enumerate(plant_counts):
 	clean_dict[str(i)] = (key, plant_counts[key][0]/downloaded, plant_counts[key][1]/downloaded)

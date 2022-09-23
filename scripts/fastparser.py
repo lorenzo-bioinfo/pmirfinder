@@ -3,30 +3,36 @@ import os
 import pandas as pd
 
 def getMillionReads(proj, plant, srrid, basedir):
-	with open(os.path.join(basedir, f'{proj}/{proj}.human_mirs/{srrid}.alignment_report.txt')) as f:
-		million_reads = int(f.readline().strip().split(' ')[3]) / 1000000
-		return million_reads
+	try:
+		with open(os.path.join(basedir, f'{proj}/{proj}.human_mirs/{srrid}.alignment_report.txt')) as f:
+			million_reads = int(f.readline().strip().split(' ')[3]) / 1000000
+	except ValueError:
+		million_reads = None
+	return million_reads
 
 def fastaParse(fasta_file, proj, plant, srrid, basedir):
 	scaling_factor = getMillionReads(proj, plant, srrid, basedir)
-	with open(fasta_file, 'r') as f:
-		genes = {}
-		for i, line in enumerate(f):
-			if line.startswith('>'):
-				feats = line.strip().split('|')
-				genename = feats[0][1:]
-				genes[str(i)] = [genename, int(feats[1].split('-')[1]), int(feats[2].split('-')[1]), int(feats[1].split('-')[1]) / scaling_factor]
-			else:
-				try:
-					genes[str(i-1)].append(line.strip())
-				except KeyError:
-					print(f'{i} not in dict')
-	df = pd.DataFrame.from_dict(genes, orient = 'index')
-	try:
-		df.columns = ['Name', 'Len', 'Count', 'Normcount', 'Seq']
-	except ValueError:
-		print(f'Skipping {plant} mirs for {srrid} as no PmiRNAs were found')
-	return(df)
+	if scaling_factor != None:
+		with open(fasta_file, 'r') as f:
+			genes = {}
+			for i, line in enumerate(f):
+				if line.startswith('>'):
+					feats = line.strip().split('|')
+					genename = feats[0][1:]
+					genes[str(i)] = [genename, int(feats[1].split('-')[1]), int(feats[2].split('-')[1]), int(feats[1].split('-')[1]) / scaling_factor]
+				else:
+					try:
+						genes[str(i-1)].append(line.strip())
+					except KeyError:
+						print(f'{i} not in dict')
+		df = pd.DataFrame.from_dict(genes, orient = 'index')
+		try:
+			df.columns = ['Name', 'Len', 'Count', 'Normcount', 'Seq']
+		except ValueError:
+			print(f'Skipping {plant} mirs for {srrid} as no PmiRNAs were found')
+		return(df)
+	else:
+		return pd.DataFrame([])
 
 #reading cli arguments
 plant = sys.argv[1]
@@ -44,6 +50,9 @@ for srrid in srr_ids:
 	try:
 		fastafile = os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.fa')
 		df = fastaParse(fastafile, proj, plant, srrid, basedir)
-		df.to_csv(os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.tsv'), sep = '\t')
+		if not df.empty:
+			df.to_csv(os.path.join(basedir, f'{proj}/{proj}.pmirs/{srrid}.{plant}.tsv'), sep = '\t')
+		else:
+			pass
 	except FileNotFoundError:
 		print(f'{srrid} not found. Probably download went wrong in the first place...')
