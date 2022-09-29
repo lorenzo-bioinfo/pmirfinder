@@ -40,6 +40,7 @@ Please install specified version or higher
 - Trim Galore! v0.6.7 (https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)
 - Bowtie v1.3.1 (http://bowtie-bio.sourceforge.net/index.shtml)
 - Blast+ (https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+- MUSCLE v3.8.1551 (http://www.drive5.com/muscle)
 - Python3
 
 ### - <u>Python libraries</u>
