@@ -171,11 +171,18 @@ for plant in ${PLANTS[@]}
 do
         echo "$(wc -c $BASEDIR/bt-index/$plant/$plant.fa)" >> $BASEDIR/data/genome_sizes.txt
 done
-mkdir $BASEDIR/graphs
+mkdir $BASEDIR/report
+echo "Generating final tabular report"
+echo "and reporting pmiRNAs in fasta format"
+python $BASEDIR/scripts/datacleaner.py $BASEDIR
+echo "Calculating consensus sequence for pmiRNAs"
+python $BASEDIR/scripts/conSequence.py $BASEDIR/report/pmirnas.fasta $BASEDIR/report/pmirnas_consensus.fasta 0.7
+mkdir $BASEDIR/report/graphs
 echo 'Reporting alignments data'
 python $BASEDIR/scripts/alignments_reporter.py $BASEDIR
 echo 'Plotting some graphs...'
 python $BASEDIR/scripts/alignments_barplot.py $BASEDIR
 python $BASEDIR/scripts/bitscore_kde.py $BASEDIR
+python $BASEDIR/scripts/clean_bitscore_kde.py $BASEDIR
 rm $BASEDIR/data/allids.txt
 echo 'Done!'

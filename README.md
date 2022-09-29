@@ -47,12 +47,13 @@ Please install specified version or higher
 - pandas
 - numpy
 - matplotlib
-- seaborn
+- seaborn v0.12.0 or higher
 - requests
 - wget
 - gtfparse
 - shutil
 - subprocess
+- biopython
 
 ### - <u>Managing input data</u>
 The following instructions explain how to add smallRNA-sequencing data to be processed or plant genomes to perform pmiRNAs search against.
