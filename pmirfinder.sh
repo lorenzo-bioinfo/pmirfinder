@@ -184,5 +184,11 @@ echo 'Plotting some graphs...'
 python $BASEDIR/scripts/alignments_barplot.py $BASEDIR
 python $BASEDIR/scripts/bitscore_kde.py $BASEDIR
 python $BASEDIR/scripts/clean_bitscore_kde.py $BASEDIR
+echo 'Generating matrices for data clustering...'
+python $BASEDIR/scripts/matrix_generator.py $BASEDIR
+echo 'Done'
+echo 'Clustering data and plotting results...'
+python $BASEDIR/scripts/pmirs_clustering.py $BASEDIR
+echo 'Done'
 rm $BASEDIR/data/allids.txt
-echo 'Done!'
+echo 'All operations successfully finished! Exiting...'
