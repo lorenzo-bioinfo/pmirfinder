@@ -91,7 +91,7 @@ To remove an SRA project from the process just delete the corresponding file in 
 
 If you wish to just remove a single experiment (i.e. an SRR-id), edit the corresponding PRJNA- file and delete the SRR-id.
 
-### <u>Understanding output</u>
+### - <u>Understanding output</u>
 
 pmiRFinder produces several files and graphs, which can be found in the /report/ folder at the end of the analysis. Following, a brief description of the output:
 #### Text files
@@ -100,7 +100,7 @@ pmiRFinder produces several files and graphs, which can be found in the /report/
 - *pres_abs_matrix.tsv* just like *counts_matrix.tsv* but contains 1 if the pmiRNA is present or 0 if it is absent for each SRRid. Used for clustering data;
 - *pmirnas.fasta* contains (guess what) the identified putative pmiRNAs in fasta format;
 - *pmirnas_consensus.fasta* contains the consensus sequence calculated on putative pmiRNAs.
-### Graphs
+#### Graphs
 - *alignments_barplot.png* and *alignments_barplot_norm.png* shows the average number of reads aligned to each plants genome. The second one is just normalized for genome size;
 - *unclean_bitscores_distribution.png* and *clean_bitscores_distribution.png* display the Kernel Density Estimate (KDE) for the Bitscores reported by BLAST on different databases. The unclean one refers to putative pmiRNAs before they are filtered based on Bitscores comparison across different databases;
 - *counts_clustering.png* and *pres_abs_clustering.png* show heatmaps and dendrograms for clustering performed on the relative matrices (see above in Text files). A big version is also provided, which shows every experiment and every sequence (BIG pictures, handle with care).
