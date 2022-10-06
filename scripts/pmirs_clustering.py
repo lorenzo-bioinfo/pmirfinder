@@ -32,7 +32,9 @@ with open(f'{basedir}/results/srrids_counts_ordered.txt', 'w') as f:
     for i in index_row:
         f.write(f'{ids[i]}\n')
 plt.savefig(f'{basedir}/report/graphs/counts_clustering.png', dpi = 300)
-plt.savefig(f'{basedir}/report/graphs/big_counts_clustering.png', dpi = 300, figsize = (len(norm_counts_df), len(norm_counts_df.columns)))
+plt.clf()
+clusterfig = sns.clustermap(norm_counts_df, row_linkage = cluster_row, col_linkage = cluster_col, cmap = 'magma', figsize = (len(norm_counts_df) / 2, len(norm_counts_df.columns) / 2))
+plt.savefig(f'{basedir}/report/graphs/big_counts_clustering.png', dpi = 300)
 plt.clf()
 
 #clustering and plotting presence/absence data
@@ -52,5 +54,7 @@ with open(f'{basedir}/results/srrids_presabs_ordered.txt', 'w') as f:
     for i in index_row:
         f.write(f'{ids[i]}\n')
 plt.savefig(f'{basedir}/report/graphs/pres_abs_clustering.png', dpi = 300)
-plt.savefig(f'{basedir}/report/graphs/big_pres_abs_clustering.png', dpi = 300, figsize = (len(norm_counts_df), len(norm_counts_df.columns)))
+plt.clf()
+clusterfig = sns.clustermap(pa_df, row_linkage = cluster_row, col_linkage = cluster_col, cmap = 'magma', figsize = (len(pa_df) / 2, len(pa_df.columns) / 2))
+plt.savefig(f'{basedir}/report/graphs/big_pres_abs_clustering.png', dpi = 300)
 plt.clf()
